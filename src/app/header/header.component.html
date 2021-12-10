@@ -1,13 +1,31 @@
 
-<mat-toolbar color="primary">
-<mat-toolbar-row>
-    <button mat-icon-button>
-    </button>
-    <h1>Ethor</h1>
-    <span class="menu-spacer"></span>
-    <div>
-    <a mat-button [routerLink]="'/home'">Home</a>
-    <a mat-button [routerLink]="'/mission-vision'"> Mission and vision </a>
-    <a mat-button [routerLink]="'/contact'"> Contact us </a>
-    </div>
-</mat-toolbar-row>
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="app-header">
+        <button mat-icon-button>
+            </button>
+            
+            <div><span>Ethot site</span></div>
+            
+            <span class="menu-spacer"></span>
+            <div>
+            <a mat-button [routerLink]="'/home'">Home</a>
+            <a mat-button [routerLink]="'/products'">Products</a>
+            <a mat-button [routerLink]="'/mission-vision'"> Mission and vision </a>
+            <a mat-button [routerLink]="'/contact'"> Contact us </a>
+            </div>
+        <span class="nav-tool-items">
+          <a mat-button mat-raised-button [matMenuTriggerFor]="menu" color="primary">
+              <mat-icon>account_circle</mat-icon>
+          </a>
+          <mat-menu #menu="matMenu">
+              <button mat-menu-item routerLink="register" routerLinkActive="active">
+                  <mat-icon>person_add</mat-icon>
+                  <a >Sign up</a>
+                </button>
+              <button mat-menu-item routerLink="login" routerLinkActive="active">
+                <mat-icon>face</mat-icon>
+                <a >Log in</a>
+              </button>
+            </mat-menu>
+        </span>
+      </mat-toolbar>   

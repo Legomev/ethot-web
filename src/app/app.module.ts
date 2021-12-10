@@ -18,6 +18,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ProductsComponent } from './components/products/products.component';
 import { ProductComponent } from './components/product/product.component';
+import { HomeComponent } from './components/home/home.component';
+import { MisionVisionComponent } from './components/mision-vision/mision-vision.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { ProductComponent } from './components/product/product.component';
     RegisterComponent,
     PageNotFoundComponent,
     ProductsComponent,
-    ProductComponent
+    ProductComponent,
+    HomeComponent,
+    MisionVisionComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

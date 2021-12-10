@@ -3,14 +3,21 @@ import { RouterModule, Routes } from '@angular/router';
 import { LogInComponent } from './components/log-in/log-in.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { HomepageComponent } from './homepage/homepage.component';
+import { ProductsComponent } from './components/products/products.component';
+
+import { HomeComponent } from './components/home/home.component';
+import { MisionVisionComponent } from './components/mision-vision/mision-vision.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component: LogInComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'mision-vision', component: MisionVisionComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'home', component: HomepageComponent },
+  { path: 'products', component: ProductsComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
