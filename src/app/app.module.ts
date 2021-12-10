@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,9 @@ import { RegisterComponent } from './components/register/register.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ProductsComponent } from './components/products/products.component';
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +25,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomepageComponent,
     HeaderComponent,
     LogInComponent,
-    RegisterComponent
+    RegisterComponent,
+    PageNotFoundComponent,
+    ProductsComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,

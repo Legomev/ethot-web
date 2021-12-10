@@ -1,11 +1,7 @@
 <!-- Toolbar -->
 <mat-toolbar color="primary" class="app-header">
     <div><span>Ethot site</span></div>
-    <!---->
     <span class="nav-tool-items">
-        
-        
-       
       <a mat-button mat-raised-button [matMenuTriggerFor]="menu" color="primary">
           <mat-icon>account_circle</mat-icon>
       </a>
@@ -20,9 +16,7 @@
           </button>
         </mat-menu>
     </span>
-
-
-
   </mat-toolbar>
   
-  <router-outlet></router-outlet>
+<app-products></app-products>
+<router-outlet></router-outlet>

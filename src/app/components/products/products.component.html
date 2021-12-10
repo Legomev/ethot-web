@@ -1,0 +1,6 @@
+<mat-grid-list cols="2" rowHeight="7:6">
+        <mat-grid-tile *ngFor="let p of products">
+            <app-product [productView]="p">
+            </app-product>
+        </mat-grid-tile>
+</mat-grid-list>
