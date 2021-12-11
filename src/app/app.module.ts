@@ -22,6 +22,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MisionVisionComponent } from './components/mision-vision/mision-vision.component';
 import { ContactComponent } from './components/contact/contact.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,7 @@ import { ContactComponent } from './components/contact/contact.component';
     AngularMaterialModule,
     FlexLayoutModule,
     FormsModule, 
-    ReactiveFormsModule 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
   { path: 'login', component: LogInComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'mision-vision', component: MisionVisionComponent },
+  { path: 'mission-vision', component: MisionVisionComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'products', component: ProductsComponent },
