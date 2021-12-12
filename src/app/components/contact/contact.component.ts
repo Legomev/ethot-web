@@ -28,7 +28,7 @@ export class ContactComponent implements OnInit {
   onSubmit(formData : FormGroup)  {
     let contactInfo : ContactInfoModel = {
       email : formData.controls['email'].value, 
-      fullName : formData.controls['fullname'].value, 
+      fullname : formData.controls['fullname'].value, 
       comment : formData.controls['comment'].value 
     }
     

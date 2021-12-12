@@ -1,5 +1,5 @@
 export interface ContactInfoModel {
     email : string;
-    fullName : string;
+    fullname : string;
     comment: string;
 }

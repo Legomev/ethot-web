@@ -16,7 +16,7 @@ export class ContactService {
   constructor(private http: HttpClient, private backConfiguration : BackconfigurationService ) { }
 
   public sendEmail(contactInfo : ContactInfoModel ){
-    let url = this.backConfiguration.getBaseUrl() + "/contact";
+    let url = this.backConfiguration.getBaseUrl() + "/contactme";
    
     this.http.post<ContactResponseModel>(url, contactInfo).subscribe(
       (data: ContactResponseModel) => console.log(data)
