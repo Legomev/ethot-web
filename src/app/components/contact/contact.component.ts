@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators, NgForm } from '@angular/forms'
+import { ContactInfoModel } from '../../models/contactinfo.model';
+import { ContactService } from '../../services/contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -7,34 +9,30 @@ import { FormGroup, FormBuilder, FormControl, Validators, NgForm } from '@angula
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  FormData! : FormGroup;
+  formData! : FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private contactService: ContactService) { }
 
   ngOnInit(): void {
-    this.FormData = this.fb.group(
+    this.formData = this.fb.group(
       {
-       Fullname: new FormControl('', [Validators.required]),
-       Email: new FormControl('', Validators.compose( [Validators.required, Validators.email] )),
-       Comment: new FormControl('', [Validators.required])
+       fullname: new FormControl('', [Validators.required]),
+       email: new FormControl('', Validators.compose( [Validators.required, Validators.email] )),
+       comment: new FormControl('', [Validators.required])
       }
     )
   }
 
 
   
-  onSubmit(FormData : FormGroup) {
-    console.log(FormData)
-    /*
-    this.contact.PostMessage(FormData)
-      .subscribe(response => {
-        location.href = 'https://mailthis.to/confirm'
-        console.log(response)
-      }, error => {
-        console.warn(error.responseText)
-        console.log({ error })
-      })*/
-
+  onSubmit(formData : FormGroup)  {
+    let contactInfo : ContactInfoModel = {
+      email : formData.controls['email'].value, 
+      fullName : formData.controls['fullname'].value, 
+      comment : formData.controls['comment'].value 
+    }
+    
+    this.contactService.sendEmail(contactInfo);
   }
   
 

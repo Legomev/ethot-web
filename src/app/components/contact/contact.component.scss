@@ -1,52 +1,36 @@
-.ng-valid[required], .ng-valid.required  {
-    border-left: 5px solid #42A948; /* green */
-  }
-  
-  .ng-invalid:not(form)  {
-    border-left: 5px solid #a94442; /* red */
-  }
-  
-  .alert div {
-    background-color: #fed3d3;
-    color: #820000;
-    padding: 1rem;
-    margin-bottom: 1rem;
-  }
+.contact-wrapper .example-form {
+  min-width: 100%;
+  max-width: 400px;
+  width: 100%;
+}
 
+.contact-wrapper .example-full-width,
+.contact-wrapper .btn-block {
+  width: 100%;
+}
 
-  .contact-wrapper .example-form {
-    min-width: 100%;
-    max-width: 400px;
-    width: 100%;
-  }
-  
-  .contact-wrapper .example-full-width,
-  .contact-wrapper .btn-block {
-    width: 100%;
-  }
-  
-  .contact-wrapper mat-card-header {
-    text-align: center;
-    width: 100%;
-    display: block;
-    font-weight: 700;
-  }
-  
-  .contact-wrapper mat-card-header mat-card-title {
-    font-size: 30px;
-    margin: 0;
-  }
-  
-  .contact-wrapper .mat-card {
-    padding: 40px 70px 50px;
-  }
-  
-  .contact-wrapper .mat-stroked-button {
-    border: 1px solid currentColor;
-    line-height: 54px;
-    background: #FFF7FA;
-  }
-  
-  .contact-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
-    padding: 0.8375em 0;
-  }
+.contact-wrapper mat-card-header {
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-weight: 700;
+}
+
+.contact-wrapper mat-card-header mat-card-title {
+  font-size: 30px;
+  margin: 0;
+}
+
+.contact-wrapper .mat-card {
+  padding: 40px 70px 50px;
+}
+
+.contact-wrapper .mat-stroked-button {
+  border: 1px solid currentColor;
+  line-height: 54px;
+  background: #FFF7FA;
+}
+
+.contact-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0.8375em 0;
+}

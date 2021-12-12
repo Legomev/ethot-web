@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomepageComponent } from './homepage/homepage.component';
 import { HeaderComponent } from './header/header.component';
+import { InterceptorService } from './services/interceptor.service';
 //Angular material components
 import { AngularMaterialModule } from './angular-material.module';
 
@@ -22,6 +23,8 @@ import { HomeComponent } from './components/home/home.component';
 import { MisionVisionComponent } from './components/mision-vision/mision-vision.component';
 import { ContactComponent } from './components/contact/contact.component';
 
+//Services
+import { ContactService } from './services/contact.service';
 
 @NgModule({
   declarations: [
@@ -39,15 +42,23 @@ import { ContactComponent } from './components/contact/contact.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
     FlexLayoutModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    },
+    ContactService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
