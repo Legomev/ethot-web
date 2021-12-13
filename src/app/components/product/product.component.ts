@@ -8,10 +8,16 @@ import { ProductModel } from '../../models/product.model';
 })
 export class ProductComponent implements OnInit {
   @Input() productView : ProductModel = {}; 
-  
+  private defaultImage = "/assets/imgs/default.jpg";
+  public imageUrl = '';
   constructor() { }
 
   ngOnInit(): void {
+    this.imageUrl = "/assets/imgs/" + this.productView.id + ".jpg" ;
+
   }
 
+  public onError(): void {
+    this.imageUrl = this.defaultImage;
+  }
 }

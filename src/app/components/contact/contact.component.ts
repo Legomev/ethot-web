@@ -23,7 +23,9 @@ export class ContactComponent implements OnInit {
     )
   }
 
+  flush(){
 
+  }
   
   onSubmit(formData : FormGroup)  {
     let contactInfo : ContactInfoModel = {
@@ -33,6 +35,8 @@ export class ContactComponent implements OnInit {
     }
     
     this.contactService.sendEmail(contactInfo);
+
+    
   }
   
 
