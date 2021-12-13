@@ -34,9 +34,7 @@ export class ContactComponent implements OnInit {
       comment : formData.controls['comment'].value 
     }
     
-    this.contactService.sendEmail(contactInfo);
-
-    
+    this.contactService.sendEmail(contactInfo);    
   }
   
 

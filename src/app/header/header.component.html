@@ -12,9 +12,10 @@
             <a mat-button [routerLink]="'/products'">Products</a>
             <a mat-button [routerLink]="'/mission-vision'"> Mission and vision </a>
             <a mat-button [routerLink]="'/contact'"> Contact us </a>
+            <a *ngIf="session" mat-button [routerLink]="'/logout'"> Logout </a>
             </div>
         <span class="nav-tool-items">
-          <a mat-button mat-raised-button [matMenuTriggerFor]="menu" color="primary">
+          <a *ngIf="!session" mat-button mat-raised-button [matMenuTriggerFor]="menu" color="primary">
               <mat-icon>account_circle</mat-icon>
           </a>
           <mat-menu #menu="matMenu">
