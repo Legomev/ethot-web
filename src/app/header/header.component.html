@@ -9,11 +9,11 @@
             <span class="menu-spacer"></span>
             <div>
             <a mat-button [routerLink]="'/home'">Home</a>
-            <a mat-button [routerLink]="'/products'">Products</a>
+            <a *ngIf="session" mat-button [routerLink]="'/products'">Products</a>
             <a mat-button [routerLink]="'/mission-vision'"> Mission and vision </a>
             <a mat-button [routerLink]="'/contact'"> Contact us </a>
-            <span *ngIf="session">Welcome {{username}}</span>
-            <a *ngIf="session" mat-button [routerLink]="'/logout'"> Logout </a>
+            <a *ngIf="session">Welcome {{username}}</a>
+            <a *ngIf="session" mat-button (click)="logout()"> Logout </a>
             
             </div>
         <span class="nav-tool-items">

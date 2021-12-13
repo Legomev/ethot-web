@@ -16,11 +16,13 @@ export class LoginService {
   constructor(private http: HttpClient, private backConfiguration : BackconfigurationService, private localStorageService : LocalStorageService  ) { }
 
   public login(credentials: CredentialsModel): Observable<TokenModel> {
+    this.getLoggedInName.next("OK");
     let url = this.backConfiguration.getBaseUrl() + '/login';
     return this.http.post<TokenModel>(url, credentials);
   }
 
   public logout(){
+    this.getLoggedInName.next("");
     let url = this.backConfiguration.getBaseUrl() + '/logout';
     let token : TokenModel = this.localStorageService.GetToken();
     return this.http.post<TokenModel>(url, token);
