@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LocalStorageService } from '../services/local-storage.service';
 import { LoginService } from '../services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit {
   session = false;
   username: any;
 
-  constructor(private localStorageService : LocalStorageService) { }
+  constructor(private localStorageService : LocalStorageService, private router: Router) { }
 
   ngOnInit(): void {
     this.localStorageService.getLoggedInName.subscribe(name => this.changeName(name));
@@ -28,11 +29,13 @@ export class HeaderComponent implements OnInit {
     else{
       this.username = name;
       this.session = true;
+      this.router.navigate(['/products']);
     }
 }
 
   logout(){
     this.session = false;
     this.localStorageService.RemoveSession();
+    this.router.navigate(['/login']);
   }
 }
