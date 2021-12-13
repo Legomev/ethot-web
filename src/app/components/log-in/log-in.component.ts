@@ -3,6 +3,7 @@ import { LoginService } from '../../services/login.service';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { CredentialsModel } from '../../models/credentials.model';
 import { TokenModel } from '../../models/token.model';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-log-in',
@@ -12,7 +13,7 @@ import { TokenModel } from '../../models/token.model';
 export class LogInComponent implements OnInit {
   formData! : FormGroup;
 
-  constructor(private fb: FormBuilder, private loginService: LoginService) { }
+  constructor(private fb: FormBuilder, private loginService: LoginService, private localStorageService : LocalStorageService) { }
 
   ngOnInit(): void {
     this.formData = this.fb.group(
@@ -33,8 +34,13 @@ export class LogInComponent implements OnInit {
     this.loginService.login(credentials).subscribe(
       (data: TokenModel) => {
         console.log(data)
+        this.localStorageService.SaveSession(data);
       }
     ); 
+  }
+
+  logout(){
+    
   }
 
 }
